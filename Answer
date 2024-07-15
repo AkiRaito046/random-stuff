@@ -1,0 +1,16 @@
+function [primesInInterval, numberPrimes] = primeFinder(interval)
+    % Ensure interval is sorted
+    interval = sort(interval);
+    
+    % Generate all numbers in the interval
+    numbers = (interval(1)+1):interval(2)-1;
+    
+    % Use isprime to find prime numbers
+    isPrime = isprime(numbers);
+    
+    % Extract prime numbers
+    primesInInterval = numbers(isPrime)';
+    
+    % Count number of primes
+    numberPrimes = sum(isPrime);
+end
